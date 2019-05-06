@@ -29,6 +29,21 @@ Dependencies
 ------------
 None
 
+Example Playbooks
+-----------------
+
+```yml
+---
+
+- hosts: localhost
+  roles:
+     - { role: Gremlin.gremlin }
+  vars:
+    gremlin_config:
+      gremlin_team_id: 9999999a-888b-777c-666d-55555555555e
+      gremlin_team_secret: 1111111f-222e-333d-444c-55555555555d
+```
+
 License
 -------
 
