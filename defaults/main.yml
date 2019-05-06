@@ -19,6 +19,6 @@ gremlin_version: ""
 
 gremlin_config: {}
 
-packages: "gremlin gremlind"
+packages: "gremlin, gremlind"
 
 
