@@ -12,7 +12,7 @@ gremlin_apt_repo: "deb https://deb.gremlin.com/ release non-free"
 
 # default yum repo
 gremlin_yum_repo: "https://rpm.gremlin.com/noarch/"
-gremlin_tym_gpgkey: "https://rpm.gremlin.com/gremlin-pgp-public.key"
+gremlin_yum_gpgkey: "https://rpm.gremlin.com/gremlin-pgp-public.key"
 
 # Pin to a specific version of Gremlin
 gremlin_version: ""

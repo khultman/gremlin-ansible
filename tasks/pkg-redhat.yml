@@ -6,6 +6,8 @@
     description: Gremlin, Inc.
     baseurl: "{{ gremlin_yum_repo }}"
     enabled: yes
+    gpgcheck: yes
+    gpgkey: "{{ gremlin_yum_gpgkey }}"
     state: present
   when: not ansible_check_mode
 
