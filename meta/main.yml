@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: Gremlin.gremlin
+  role_name: gremlin
   author: 'Kyle Hultman, Gremlin'
   description: Install the Gremlin agent
   license: Apache2
