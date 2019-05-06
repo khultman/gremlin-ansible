@@ -1,10 +1,12 @@
 ---
 gremlind_enabled: yes
 
+# Gremlin config
+gremlin_config: {}
+
 # default user/group
-gremlin_config:
-  gremlin_user: gremlin
-  gremlin_group: gremlin
+gremlin_user: gremlin
+gremlin_group: gremlin
 
 
 # default apt repo
