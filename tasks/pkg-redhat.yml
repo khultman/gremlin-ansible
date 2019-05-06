@@ -12,6 +12,7 @@
   when: not ansible_check_mode
 
 - name: Install latest gremlin package
-  command: yum install -y gremlin gremlind
+  yum:
+    name: "{{ packages }}"
   when: (gremlin_version == "") and (not ansible_check_mode)
   notify: restart gremlind

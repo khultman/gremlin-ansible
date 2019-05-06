@@ -17,4 +17,8 @@ gremlin_yum_gpgkey: "https://rpm.gremlin.com/gremlin-pgp-public.key"
 # Pin to a specific version of Gremlin
 gremlin_version: ""
 
+gremlin_config: {}
+
+packages: "gremlin gremlind"
+
 
