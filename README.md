@@ -9,7 +9,7 @@ Installation
 ------------
 
 ```
-ansible-galazy install Gremlin.gremlin
+ansible-galaxy install Gremlin.gremlin
 ```
 
 Role Variables
