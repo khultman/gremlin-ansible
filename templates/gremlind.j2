@@ -1,0 +1,79 @@
+# Managed by Ansible
+
+#==============================#
+# Gremlin Daemon Configuration #
+#==============================#
+
+# This file is used to expose configuration to the Gremlin daemon process (`gremlind`)
+
+# NOTE: Some process managers such as sysvinit may require these variables to be preceded
+# by `export`
+
+# When the Gremlin daemon starts, it will automatically issue a `gremlin init` command to
+# register this machine with the Gremlin Control Plane. This requires the following team and
+# secret values to be set. If these values are not set, the Gremlin daemon will continue to
+# start up. However `gremlin init` will need to be run separately before attacks can be run.
+{% if gremlin_config["gremlin_team_id"] is defined -%}
+GREMLIN_TEAM_ID= {{ gremlin_config["gremlin_team_id"] }}
+{% else -%}
+#GREMLIN_TEAM_ID=
+{% endif -%}
+
+{% if gremlin_config["gremlin_team_secret"] is defined -%}
+GREMLIN_TEAM_SECRET= {{ gremlin_config["gremlin_team_secret"] }}
+{% else -%}
+#GREMLIN_TEAM_SECRET=
+{% endif -%}
+
+#GREMLIN_TEAM_PRIVATE_KEY_OR_FILE: Your PEM-encoded private key or path/filename to a file containing the private key
+# (required for authentication). When using a path/filename, the format is:
+# GREMLIN_TEAM_PRIVATE_KEY_OR_FILE=file:///var/lib/gremlin/key.pem
+{% if gremlin_config["gremlin_team_private_key_or_file"] is defined -%}
+GREMLIN_TEAM_PRIVATE_KEY_OR_FILE= {{ gremlin_config["gremlin_team_private_key_or_file"] }}
+{% else -%}
+#GREMLIN_TEAM_PRIVATE_KEY_OR_FILE=
+{% endif -%}
+
+#GREMLIN_TEAM_CERTIFICATE_OR_FILE: Your PEM-encoded private key or path/filename to a file containing the private key
+# (required for authentication). When using a path/filename, the format is:
+# GREMLIN_TEAM_CERTIFICATE_OR_FILE=file:///var/lib/gremlin/cert.pem
+{% if gremlin_config["gremlin_team_certificate_or_file"] is defined -%}
+GREMLIN_TEAM_CERTIFICATE_OR_FILE= {{ gremlin_config["gremlin_team_certificate_or_file"] }}
+{% else -%}
+#GREMLIN_TEAM_CERTIFICATE_OR_FILE=
+{% endif -%}
+
+# GREMLIN_IDENTIFIER: Custom name for this client (default as the host's IP address)
+{% if gremlin_config["gremlin_identifier"] is defined -%}
+GREMLIN_IDENTIFIER= {{ gremlin_config["gremlin_identifier"] }}
+{% else -%}
+#GREMLIN_IDENTIFIER=
+{% endif -%}
+
+# GREMLIN_CLIENT_TAGS: Comma-separated list of custom tags to assign to this client
+# (e.g. GREMLIN_CLIENT_TAGS="zone=us-east1,role=mysql,foo=bar")
+{% if gremlin_config["gremlin_client_tags"] is defined -%}
+GREMLIN_CLIENT_TAGS= {{ gremlin_config["gremlin_client_tags"] }}
+{% else -%}
+#GREMLIN_CLIENT_TAGS=
+{% endif -%}
+
+# To use Gremlin with an http proxy, provide the proxy information. Note that all of Gremlin's
+# communication with the Gremlin Control Plane is via outbound HTTPs, therefore `https_proxy`
+# (not `http_proxy` should be used in most cases)
+# Example: https_proxy=https://proxyuser:proxypass@10.0.0.3:3218
+{% if gremlin_config["http_proxy"] is defined -%}
+http_proxy= {{ gremlin_config["http_proxy"] }}
+{% else -%}
+#http_proxy=
+{% endif -%}
+{% if gremlin_config["https_proxy"] is defined -%}
+https_proxy= {{ gremlin_config["https_proxy"] }}
+{% else -%}
+#https_proxy=
+{% endif -%}
+
+
+
+# Any additional Gremlin Daemon variables (such as GREMLIN_IDENTIFIER) may be defined here
+# (see https://www.gremlin.com/docs/infrastructure-layer/advanced-configuration/)
