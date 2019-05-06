@@ -12,5 +12,5 @@
     name: gremlin gremlind
     state: latest
     update_cache: yes
-  when: (gremlin_agent_version == "") and (not ansible_check_mode)
+  when: (gremlin_version == "") and (not ansible_check_mode)
   notify: restart gremlind

@@ -8,5 +8,5 @@
 - include_tasks: pkg-suse.yml
   when: ansible_os_family == "Suse"
 
-- include_tasks: agent-linux.yml
+- include_tasks: gremlin-linux.yml
   when: ansible_os_family != "Windows"
