@@ -1,0 +1,15 @@
+---
+
+- name: Install Gremlin yum repo
+  yum_repository:
+    name: gremlin
+    description: Gremlin, Inc.
+    baseurl: "{{ gremlin_yum_repo }}"
+    enabled: yes
+    state: present
+  when: not ansible_check_mode
+
+- name: Install latest gremlin package
+  command: yum install -y gremlin gremlind
+  when: (gremlin_agent_version == "") and (not ansible_check_mode)
+  notify: restart gremlind

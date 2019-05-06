@@ -1,0 +1,16 @@
+---
+
+- name: Install Gremlin apt repo
+  apt_repository:
+    repo: "{{ gremlin_apt_repo }}"
+    state: present
+    update_cache: yes
+  when: not ansible_check_mode
+
+- name: Install latest gremlin package
+  apt:
+    name: gremlin gremlind
+    state: latest
+    update_cache: yes
+  when: (gremlin_agent_version == "") and (not ansible_check_mode)
+  notify: restart gremlind

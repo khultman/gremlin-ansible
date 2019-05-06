@@ -1,0 +1,9 @@
+---
+
+- name: Create Gremlin configuration file
+  template:
+    src: gremlind.j2
+    dest: /etc/default/gremlind
+    owner: "{{ gremlin_user }}"
+    group: "{{ gremlin_group }}"
+  notify: restart gremlind

@@ -1,0 +1,12 @@
+---
+- include_tasks: pkg-debian.yml
+  when: ansible_os_family == "Debian"
+
+- include_tasks: pkg-redhat.yml
+  when: ansible_os_family == "RedHat"
+
+- include_tasks: pkg-suse.yml
+  when: ansible_os_family == "Suse"
+
+- include_tasks: agent-linux.yml
+  when: ansible_os_family != "Windows"

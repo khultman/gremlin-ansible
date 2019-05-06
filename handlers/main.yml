@@ -1,0 +1,7 @@
+---
+
+- name: restart gremlind
+  service:
+    name: gremlind
+    state: restarted
+  when: gremlind_enabled and not ansible_check_mode and not ansible_os_family == "Windows"
