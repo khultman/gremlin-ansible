@@ -9,7 +9,7 @@ Installation
 ------------
 
 ```
-ansible-galaxy install Gremlin.gremlin
+ansible-galaxy -v install git+https://github.com/khultman/gremlin-ansible.git
 ```
 
 Role Variables
