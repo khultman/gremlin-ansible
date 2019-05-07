@@ -32,7 +32,10 @@ None
 Example Playbooks
 -----------------
 
-```yml
+
+With TeamID & Secret
+
+```yaml
 ---
 
 - hosts: localhost
@@ -43,6 +46,21 @@ Example Playbooks
       gremlin_team_id: 9999999a-888b-777c-666d-55555555555e
       gremlin_team_secret: 1111111f-222e-333d-444c-55555555555d
 ```
+
+With Private Key authentication
+```yaml
+---
+
+- hosts: localhost
+  roles:
+     - { role: Gremlin.gremlin }
+  vars:
+    gremlin_config:
+      gremlin_team_id: 9999999a-888b-777c-666d-55555555555e
+      gremlin_team_private_key_or_file: "file:///var/lib/gremlin/key.pem"
+      gremlin_team_certificate_or_file: "file:///var/lib/gremlin/cert.pem"
+```
+
 
 License
 -------
