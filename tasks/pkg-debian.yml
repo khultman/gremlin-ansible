@@ -1,5 +1,4 @@
 ---
-
 - name: Install Gremlin apt repo
   apt_repository:
     repo: "{{ gremlin_apt_repo }}"
@@ -12,5 +11,6 @@
     name: "{{ packages }}"
     state: latest
     update_cache: yes
+    allow-unauthenticated: yes
   when: (gremlin_version == "") and (not ansible_check_mode)
   notify: restart gremlind
