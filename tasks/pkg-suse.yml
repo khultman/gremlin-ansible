@@ -1,3 +1,21 @@
 ---
+- name: Install Gremlin zypper repo
+  zypper_repository:
+    name: gremlin-repo
+    repo: "{{ gremlin_zypper_repo }}"
+    state: present
+    runrefresh: yes
+  when: not ansible_check_mode
 
-# Nothing here yet, coming soon
+- name: Add Gremlin GPG key
+  rpm_key:
+    key: https://rpm.gremlin.com/gremlin-pgp-public.key
+    state: present
+
+- name: Install latest Gremlin package and requirements
+  zypper:
+    name: "{{suse_reqs}},{{ packages }}"
+    state: latest
+    runrefresh: yes
+  when: (gremlin_version == "") and (not ansible_check_mode)
+  notify: restart gremlind
