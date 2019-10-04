@@ -17,6 +17,5 @@
     name: "{{ packages }}"
     state: latest
     update_cache: yes
-    allow-unauthenticated: yes
   when: (gremlin_version == "") and (not ansible_check_mode)
   notify: restart gremlind
