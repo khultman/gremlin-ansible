@@ -1,4 +1,10 @@
 ---
+- name: Import GPG key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: "{{ gremlin_apt_key }}"
+  when: not ansible_check_mode
+
 - name: Install Gremlin apt repo
   apt_repository:
     repo: "{{ gremlin_apt_repo }}"

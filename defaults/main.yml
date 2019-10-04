@@ -10,6 +10,7 @@ gremlin_group: gremlin
 
 # default apt repo
 gremlin_apt_repo: "deb https://deb.gremlin.com/ release non-free"
+gremlin_apt_key: 9CDB294B29A5B1E2E00C24C022E8EF3461A50EF6
 
 # default yum repo
 gremlin_yum_repo: "https://rpm.gremlin.com/noarch/"
