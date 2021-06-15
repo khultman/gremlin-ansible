@@ -66,12 +66,3 @@ License
 -------
 
 Apache2
-
-Author Information
-------------------
-
-kyle@gremlin.com
-
-Version
--------
-v0.2 (Beta)
