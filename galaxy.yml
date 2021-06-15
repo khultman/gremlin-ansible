@@ -1,0 +1,13 @@
+namespace: "gremlin"
+name: "ansible_gremlin"
+version: "1.0.0"
+readme: "README.md"
+authors:
+    - "khultman"
+    - "nekototori"
+license:
+    - "MIT"
+tags:
+    - gremlin
+    - chaos
+repository: "https://github.com/gremlin/ansible-gremlin"
