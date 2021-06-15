@@ -9,7 +9,7 @@ Installation
 ------------
 
 ```
-ansible-galaxy -v install git+https://github.com/khultman/gremlin-ansible.git
+ansible-galaxy -v install git+https://github.com/gremlin/ansible-gremlin.git
 ```
 
 Role Variables
@@ -66,8 +66,3 @@ License
 -------
 
 Apache2
-
-Author Information
-------------------
-
-khultman@gmail.com
